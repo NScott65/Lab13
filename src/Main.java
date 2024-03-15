@@ -7,7 +7,7 @@ public class Main {
 
     public static boolean done = false;
     public static void main(String[] args) {
-
+    
 
 
         String choice = "";
@@ -30,6 +30,14 @@ public class Main {
                 printList();
             } else if (choice.equalsIgnoreCase("q")) {
                 quit();
+            }else if (choice.equalsIgnoreCase("o")){
+
+            }else if (choice.equalsIgnoreCase("s")){
+
+            }else if (choice.equalsIgnoreCase("c")){
+
+            }else if(choice.equalsIgnoreCase("v")){
+
             }
         }while(!done);
 

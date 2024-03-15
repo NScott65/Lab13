@@ -14,9 +14,7 @@ public class  WritingFiles {
 
         //Sample data that is being added to an ArrayList named recs
         ArrayList <String> recs = new ArrayList<String>();
-        recs.add("Sample data Line 1");
-        recs.add("Sample data Line 2");
-        recs.add("Sample data Line 3");
+
 
         //This variable will hold the users current working directory (program folder)
         //"user.dir" is shorthand for current working directory (project folder)
