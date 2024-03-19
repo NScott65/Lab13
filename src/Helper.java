@@ -76,7 +76,7 @@ public class Helper {
         return input;
     }
 
-    public static String getYNConfirm(Scanner in, String prompt){
+    public static boolean getYNConfirm(Scanner in, String prompt){
         String input = " ";
         boolean yn = false;
         boolean valid = false;
@@ -103,11 +103,11 @@ public class Helper {
 
         if(yn == true){
             input = "true";
-        }else if(yn == false){
-            input = "false";
+        }else if(input = "false"){
+            ;yn == false
         }
 
-        return input;
+        return yn;
     }
 
     public static double getDouble(Scanner in, String prompt){

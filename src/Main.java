@@ -9,7 +9,9 @@ public class Main {
     public static void main(String[] args) {
     
 
-
+        boolean loaded = false;
+        boolean edited = false;
+        boolean saved = false;
         String choice = "";
         String newWord = "";
         int delNum = 0;
@@ -22,6 +24,9 @@ public class Main {
 
                 newWord = Helper.getNonZeroLengString(scan, "Enter your word: ");
                 addString(newWord);
+                if(loaded){
+
+                }
             } else if (choice.equalsIgnoreCase("d")) {
                 delNum = Helper.getInt(scan, "Enter the index of the word you want to delete: ");
                 deleteString(delNum);
@@ -31,7 +36,15 @@ public class Main {
             } else if (choice.equalsIgnoreCase("q")) {
                 quit();
             }else if (choice.equalsIgnoreCase("o")){
-
+                if(edited){
+                    if(loaded){
+                        IOHelper.writeFile(list, fileName);
+                    }else {
+                        if(Helper.getYNConfirm(scan, "Do you want to save the current list before opening another?")){
+                            IOHelper.writeFile(list, Helper.getNonZeroLengString(scan, "Enter File Name: "));
+                        }
+                    }
+                }
             }else if (choice.equalsIgnoreCase("s")){
 
             }else if (choice.equalsIgnoreCase("c")){
