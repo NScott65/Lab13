@@ -52,26 +52,36 @@ public class Main {
                 }
                 greg.clear();
                 loaded = true;
+                edited = false;
                 fileName = IOHelper.openFile(greg);
 
             }else if (choice.equalsIgnoreCase("s")){
                 if (loaded) {
                     if(edited){
+                        IOHelper.writeFile(greg,fileName);
+                    }else{
                         System.out.println("Please enter the name of your file: ");
                         fileName = scan.nextLine();
                         IOHelper.writeFile(greg,fileName);
                     }
                 }
-                loaded = false;
-                edited = false;
-                greg.clear();
+                if(!Helper.getYNConfirm(scan, "Do you want to continue to work on this file?")) {
+                    loaded = false;
+                    edited = false;
+                    greg.clear();
+                    System.out.println("YOu can now start a new file.");
+                }
 
 
             }else if (choice.equalsIgnoreCase("c")){
                 if(loaded) {
                     greg.clear();
+                    edited = true;
+                }else{
+                    System.out.println("\nInvalid entry.");
                 }
-                edited = true;
+
+
             }
         }while(!done);
 
