@@ -101,10 +101,10 @@ public class Helper {
             }
         }while(!valid);
 
-        if(yn == true){
-            input = "true";
-        }else if(input = "false"){
-            ;yn == false
+        if(input.equalsIgnoreCase("true")){
+            yn = true;
+        }else if(input.equalsIgnoreCase("false")){
+            yn = false;
         }
 
         return yn;

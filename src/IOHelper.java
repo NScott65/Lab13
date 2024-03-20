@@ -50,6 +50,7 @@ public class IOHelper {
                 }
                 reader.close(); // must close the file to seal it and clear buffer
                 System.out.println("\n\nData file read!"); //Success message
+                return file.getFileName().toString();
             } else {
                 //This else statement is hit when the user closes the JFileChooser Wizard without selecting file
                 System.out.println("File not selected. Please restart program.");
@@ -78,7 +79,7 @@ public class IOHelper {
         File workingDirectory = new File(System.getProperty("user.dir"));
         //Path is automatically set for user
         //In this case, the file will be stored in the src folder and the name is already chosen
-        Path file = Paths.get(workingDirectory.getPath() + "\\src\\" + name);
+        Path file = Paths.get(workingDirectory.getPath() + "\\src\\" + name + ".txt");
 
         //The try block will attempt to write a new txt file
         //If an error occurs in this block, the catch block will handle the IO Exception
